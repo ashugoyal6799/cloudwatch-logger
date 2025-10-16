@@ -1,6 +1,6 @@
-# CloudWatch Logger
+# CloudWatch Logger + Sentry
 
-Production-ready Express app with centralized logging to AWS CloudWatch.
+Production-ready Express app with centralized logging to AWS CloudWatch and error tracking with Sentry.
 
 ## Features
 
@@ -10,6 +10,7 @@ Production-ready Express app with centralized logging to AWS CloudWatch.
 - ✅ IAM role-based authentication (no hardcoded keys)
 - ✅ Daily log stream rotation
 - ✅ Request performance tracking
+- ✅ Sentry error tracking and monitoring
 
 ---
 
@@ -138,6 +139,9 @@ curl http://localhost:3000/test/info
 curl http://localhost:3000/test/warn
 curl http://localhost:3000/test/error
 curl http://localhost:3000/test/all
+
+# Test Sentry error tracking
+curl http://localhost:3000/debug-sentry
 ```
 
 Wait 30-60 seconds, then check CloudWatch Console. You should see:
@@ -145,6 +149,16 @@ Wait 30-60 seconds, then check CloudWatch Console. You should see:
 - Log group: `my-app-logs`
 - Log stream: `app-YYYY-MM-DD` (e.g., `app-2025-10-16`)
 - JSON formatted logs with trace IDs
+
+## Sentry Setup (Optional)
+
+Add to `.env`:
+
+```env
+SENTRY_DSN=your-sentry-dsn-here
+```
+
+Test: Visit `/debug-sentry` endpoint to trigger an error.
 
 ---
 

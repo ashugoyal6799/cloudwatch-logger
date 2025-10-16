@@ -19,6 +19,10 @@ const config = {
       10
     ),
   },
+
+  SENTRY: {
+    DSN: process.env.SENTRY_DSN,
+  },
 };
 
 module.exports = config;
