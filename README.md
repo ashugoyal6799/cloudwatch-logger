@@ -150,7 +150,7 @@ Wait 30-60 seconds, then check CloudWatch Console. You should see:
 - Log stream: `app-YYYY-MM-DD` (e.g., `app-2025-10-16`)
 - JSON formatted logs with trace IDs
 
-## Sentry Setup (Optional)
+## Sentry Setup
 
 Add to `.env`:
 
